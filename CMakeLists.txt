@@ -24,7 +24,6 @@ target_link_libraries(main gtest_main)
 
 # Custom function to create directories (if you added it)
 function(create_directories)
-    file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/build)  # Create the 'bin' directory
     file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/build/bin)
     # Add more directories as required
 endfunction()
@@ -34,16 +33,11 @@ create_directories()
 
 # Add a custom 'clean' target (as shown in the previous responses)
 add_custom_target(clean_all
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/build/bin
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/build/
+    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/build
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/bin
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/lib
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/CMakeFiles
-    #COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/
-    #COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/Testing
-    #COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/doc
     COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CMakeCache.txt
-    #COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/Makefile
     COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/cmake_install.cmake
     COMMENT "Cleaning build artifacts"
 )

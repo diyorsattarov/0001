@@ -70,3 +70,5 @@ desktop.ini
 *.gcda
 *.gcno
 *.gcov
+
+extern/
