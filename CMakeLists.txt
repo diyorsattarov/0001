@@ -43,7 +43,3 @@ add_custom_target(clean_all
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/CMakeFiles
     COMMENT "Cleaning build artifacts"
 )
-
-
-
-# ... (rest of your configuration) ...
