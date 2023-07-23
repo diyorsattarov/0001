@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.26)
 project(collectione_tests)
 
-# Create the 'bin' directory inside the build directory
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
 # Find the libcurl package (Recommended)
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
+
+add_library(gtest_curl STATIC
+    gtest_curl.cpp
+    gtest_curl.h
+)
 
 # Add the test executable
 add_executable(tests 
