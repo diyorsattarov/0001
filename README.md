@@ -85,4 +85,3 @@ Contributions to the Collectione project are welcome! If you find a bug, have a 
 ## License
 
 The Collectione project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
-```
