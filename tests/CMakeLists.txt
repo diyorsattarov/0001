@@ -5,7 +5,9 @@ project(collectione_tests)
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Add the test executable
-add_executable(tests gtest_main.cpp gtest_mytempclass.cpp)
+add_executable(tests 
+    gtest_main.cpp
+    gtest_mytempclass.cpp)
 
 # Set the output directory for the 'tests' executable
 set_target_properties(tests PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
