@@ -71,4 +71,4 @@ desktop.ini
 *.gcno
 *.gcov
 
-extern/
+extern/googletest
