@@ -20,4 +20,7 @@ protected:
     }
 };
 
+// Function to perform an HTTP GET request using libcurl
+std::string performHttpGet(const std::string& url);
+
 #endif // CURL_VERSION_TEST_H

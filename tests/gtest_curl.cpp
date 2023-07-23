@@ -19,7 +19,7 @@ std::string performHttpGet(const std::string& url)
         if (res != CURLE_OK) {
             // Handle error if needed
             // For simplicity, we'll just set an empty response in case of an error
-            response = "";
+            response.assign("Error: Unable to perform HTTP request");
         }
 
         curl_easy_cleanup(curl);
@@ -43,15 +43,17 @@ TEST_F(CurlTest, CheckCurlVersion)
 TEST_F(CurlTest, HttpGetRequest) 
 {
     // Replace this URL with the URL you want to test
-    std::string url = "https://www.example.com";
+    std::string url = "https://example.com";
 
     // Perform the HTTP GET request
     std::string response = performHttpGet(url);
 
-    // Output the response for debugging (optional)
+    // Output the entire response for debugging
     std::cout << "HTTP Response: " << response << std::endl;
 
-    // Add your assertions to check the response
-    // For example, you can check if the response contains specific data or if the status code is as expected
+    // Check if the response is not empty to ensure the request was successful
     EXPECT_FALSE(response.empty());
+
+    std::string expectedResponse = "Expected response from example.com";
+    EXPECT_EQ(response, expectedResponse);
 }
