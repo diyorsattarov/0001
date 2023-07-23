@@ -1,6 +1,6 @@
 # Collectione
 
-Collectione is a C++ project that provides various collection classes and utilities. It aims to make working with collections in C++ easier and more efficient.
+Collectione is a C++ project that provides various collection classes and utilities. It aims to make working with C++ easier and more efficient.
 
 ## Table of Contents
 
@@ -86,5 +86,3 @@ Contributions to the Collectione project are welcome! If you find a bug, have a 
 
 The Collectione project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
 ```
-
-You can now copy and paste this content into your `README.md` file. Remember to replace `your-username` in the repository URL with your actual GitHub username. Feel free to customize the content as per your project's specific details and requirements.
