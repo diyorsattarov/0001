@@ -34,13 +34,24 @@ create_directories()
 # Add a custom 'clean' target (as shown in the previous responses)
 add_custom_target(clean_all
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/build
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CMakeCache.txt
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/cmake_install.cmake
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/.ninja_deps
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/.ninja_log
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/build.ninja_deps
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CTestTestfile
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/bin
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/lib
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/CMakeFiles
-    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CMakeCache.txt
-    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/cmake_install.cmake
     COMMENT "Cleaning build artifacts"
 )
+
+# Add a custom 'clean_gtest' target to remove the extern/googletest directory
+add_custom_target(clean_gtest
+    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_SOURCE_DIR}/extern/googletest
+    COMMENT "Cleaning Google Test directory"
+)
+
 
 # Add your tests (assuming 'tests' is a subdirectory in your project)
 #add_subdirectory(tests)
