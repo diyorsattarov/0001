@@ -1,6 +1,3 @@
-Certainly! Here's the raw text of the `README.md` file:
-
-```markdown
 # Collectione
 
 Collectione is a C++ project that provides various collection classes and utilities. It aims to make working with collections in C++ easier and more efficient.
