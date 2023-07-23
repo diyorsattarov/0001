@@ -5,9 +5,8 @@ add_subdirectory(src)
 
 add_subdirectory(tests)
 
-
 # Check if 'extern/googletest' subdirectory exists
-if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/extern/googletest/.git)
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/src/extern/googletest/.git)
     message(STATUS "Google Test submodule not found. Cloning...")
     execute_process(
         COMMAND git clone https://github.com/google/googletest.git extern/googletest
@@ -16,7 +15,7 @@ if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/extern/googletest/.git)
 endif()
 
 # Add the 'extern/googletest' subdirectory
-add_subdirectory(extern/googletest)
+add_subdirectory(src/extern/googletest)
 
 # Enable CTest (optional but recommended for running tests)
 enable_testing()
