@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.26)
 project(collectione)
 
-# Add the 'src' subdirectory
 add_subdirectory(src)
+
+add_subdirectory(tests)
+
 
 # Check if 'extern/googletest' subdirectory exists
 if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/extern/googletest/.git)
@@ -18,9 +20,6 @@ add_subdirectory(extern/googletest)
 
 # Enable CTest (optional but recommended for running tests)
 enable_testing()
-
-# Link the 'main' executable with Google Test library
-target_link_libraries(main gtest_main)
 
 # Custom function to create directories (if you added it)
 function(create_directories)
@@ -46,14 +45,6 @@ add_custom_target(clean_all
     COMMENT "Cleaning build artifacts"
 )
 
-# Add a custom 'clean_gtest' target to remove the extern/googletest directory
-add_custom_target(clean_gtest
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_SOURCE_DIR}/extern/googletest
-    COMMENT "Cleaning Google Test directory"
-)
 
-
-# Add your tests (assuming 'tests' is a subdirectory in your project)
-#add_subdirectory(tests)
 
 # ... (rest of your configuration) ...
