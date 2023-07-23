@@ -1,5 +1,4 @@
-#include <gtest/gtest.h>
-#include "gtest_mytempclass.cpp"  // You can include the file containing the test suite here
+#include "gtest_curl.cpp"
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
