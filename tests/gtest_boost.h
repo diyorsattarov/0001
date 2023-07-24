@@ -13,6 +13,9 @@
 #include <boost/timer/timer.hpp>
 #include <boost/log/core.hpp>
 #include <boost/log/expressions.hpp>
+#include <boost/log/sinks/text_file_backend.hpp>
+//#include <boost/log/sinks/text_file_backend_fwd.hpp>
+#include <boost/log/utility/setup/file.hpp>
 #include <boost/log/sinks/basic_sink_backend.hpp>
 #include <boost/log/sinks/sync_frontend.hpp>
 #include <boost/log/sources/logger.hpp>
