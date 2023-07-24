@@ -33,6 +33,8 @@ target_link_libraries(tests PRIVATE gtest_main)
 target_link_libraries(tests PRIVATE gtest)
 target_link_libraries(tests PRIVATE ${Boost_LIBRARIES})
 target_link_libraries(tests PRIVATE Boost::log_setup)
+target_link_libraries(tests PRIVATE Boost::timer)
+
 
 
 add_test(NAME TestSuite COMMAND tests)
