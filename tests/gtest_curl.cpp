@@ -9,6 +9,7 @@ TEST_F(CurlTest, CheckCurlVersion)
     EXPECT_TRUE(versionStr != nullptr);
 }
 
+
 // Test case for HTTP GET request
 TEST_F(CurlTest, HttpGetRequest) 
 {
