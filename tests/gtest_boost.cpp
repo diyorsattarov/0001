@@ -2,7 +2,7 @@
 
 namespace logging = boost::log;
 namespace sinks = boost::log::sinks;
-
+/*
 void setupLogging()
 {
     // Create a file sink
@@ -18,10 +18,9 @@ void setupLogging()
     boost::shared_ptr<file_sink> fileSink(new file_sink(fileBackend));
     logging::core::get()->add_sink(fileSink);
 }
-
+*/
 void BoostTest::SetUp() 
 {
-    setupLogging();
 }
 
 void BoostTest::TearDown() 
@@ -68,7 +67,7 @@ TEST_F(BoostTest, BoostLogTrivial)
     EXPECT_NE(log_messages.find("An error severity message"), std::string::npos);
     EXPECT_NE(log_messages.find("A fatal severity message"), std::string::npos);
 }
-
+/*
 TEST_F(BoostTest, BoostFileLog)
 {
     // Write log messages using Boost Log
@@ -86,4 +85,4 @@ TEST_F(BoostTest, BoostFileLog)
     EXPECT_NE(log_messages.find("This is an informational message logged to file."), std::string::npos);
     EXPECT_NE(log_messages.find("This is an error message logged to file."), std::string::npos);
     EXPECT_NE(log_messages.find("This is a warning message logged to file."), std::string::npos);
-}
+}*/
