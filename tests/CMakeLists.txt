@@ -2,8 +2,12 @@ cmake_minimum_required(VERSION 3.26)
 project(collectione_tests)
 
 # Find the libcurl package (Recommended)
-find_package(CURL REQUIRED)
-include_directories(${CURL_INCLUDE_DIR})
+#find_package(CURL REQUIRED)
+#include_directories(${CURL_INCLUDE_DIR})
+
+# Find the Boost package (Recommended)
+find_package(Boost REQUIRED COMPONENTS chrono)
+include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(gtest_boost STATIC
     gtest_boost.cpp
@@ -23,7 +27,7 @@ set_target_properties(tests PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_D
 # Link the test executable with Google Test library and your main project library (if any)
 target_link_libraries(tests PRIVATE gtest_main)  # Assuming your main project is built into 'main' target
 target_link_libraries(tests PRIVATE gtest)
-
+target_link_libraries(tests PRIVATE ${Boost_LIBRARIES})
 # Optionally link with CURL library if specified
 #option(BUILD_WITH_CURL "Build with libcurl" ON)
 #if (BUILD_WITH_CURL)
