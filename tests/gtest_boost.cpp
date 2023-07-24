@@ -7,7 +7,7 @@ void BoostTest::SetUp() {}
 
 void BoostTest::TearDown() 
 {
-    boost::log::core::get()->remove_all_sinks();
+boost::log::core::get()->remove_all_sinks();
 }
 
 TEST_F(BoostTest, BoostVersion) 
