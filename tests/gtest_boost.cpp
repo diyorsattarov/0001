@@ -1,5 +1,15 @@
 #include "gtest_boost.h"
 
+void BoostTest::SetUp()
+{
+
+}
+
+void BoostTest::TearDown()
+{
+    
+}
+
 // Test case for checking the Boost version
 TEST_F(BoostTest, BoostVersion) 
 {
@@ -49,4 +59,25 @@ TEST_F(BoostTest, BoostElapsedChronoTime)
     boost::chrono::microseconds elapsedMicroseconds = boost::chrono::duration_cast<boost::chrono::microseconds>(endTime - startTime);
     EXPECT_GT(elapsedMicroseconds.count(), 0);
     std::cout << "Elapsed time: " << elapsedMicroseconds.count() / 1000000.0 << std::endl;
+}
+
+TEST_F(BoostTest, BoostLogTrivial)
+{
+    BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
+    BOOST_LOG_TRIVIAL(debug) << "A debug severity message";
+    BOOST_LOG_TRIVIAL(info) << "An informational severity message";
+    BOOST_LOG_TRIVIAL(warning) << "A warning severity message";
+    BOOST_LOG_TRIVIAL(error) << "An error severity message";
+    BOOST_LOG_TRIVIAL(fatal) << "A fatal severity message";
+
+    // Get the captured log messages from the sink
+    std::string log_messages = sink_->getLogMessages();
+
+    // Perform log message checks using EXPECT_XXX macros from gtest
+    EXPECT_NE(log_messages.find("A trace severity message"), std::string::npos);
+    EXPECT_NE(log_messages.find("A debug severity message"), std::string::npos);
+    EXPECT_NE(log_messages.find("An informational severity message"), std::string::npos);
+    EXPECT_NE(log_messages.find("A warning severity message"), std::string::npos);
+    EXPECT_NE(log_messages.find("An error severity message"), std::string::npos);
+    EXPECT_NE(log_messages.find("A fatal severity message"), std::string::npos);
 }

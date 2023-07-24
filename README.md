@@ -2,6 +2,9 @@
 
 Collectione is a C++ project that provides various collection classes and utilities. It aims to make working with C++ easier and more efficient.
 
+## TODO
+    Boost.Log
+
 ## Table of Contents
 
 - [Introduction](#introduction)

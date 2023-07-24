@@ -6,7 +6,17 @@ project(collectione_tests)
 #include_directories(${CURL_INCLUDE_DIR})
 
 # Find the Boost package (Recommended)
-find_package(Boost REQUIRED COMPONENTS chrono timer)
+find_package(Boost REQUIRED COMPONENTS 
+    chrono 
+    timer 
+    system 
+    log 
+    log_setup
+    thread 
+    filesystem
+    regex
+)
+
 include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(gtest_boost STATIC
@@ -28,6 +38,8 @@ set_target_properties(tests PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_D
 target_link_libraries(tests PRIVATE gtest_main)  # Assuming your main project is built into 'main' target
 target_link_libraries(tests PRIVATE gtest)
 target_link_libraries(tests PRIVATE ${Boost_LIBRARIES})
+target_link_libraries(tests PRIVATE Boost::log)        # Link Boost Logging library
+target_link_libraries(tests PRIVATE Boost::log_setup)  # Link Boost Logging Setup library
 # Optionally link with CURL library if specified
 #option(BUILD_WITH_CURL "Build with libcurl" ON)
 #if (BUILD_WITH_CURL)
