@@ -26,7 +26,7 @@ To get started with the Collectione project, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/collectione.git
+git clone https://github.com/diyooor/collectione.git
 ```
 
 2. Make sure you have CMake and a C++ compiler installed on your system.
@@ -47,14 +47,14 @@ The directory structure of the project is as follows:
 collectione/
 ├─ extern/       # External libraries (e.g., Google Test)
 ├─ src/          # Implementation of collection classes and utilities
-│   ├─ collection1.h
-│   ├─ collection2.h
+│   ├─ main.cpp
+│   ├─ CMakeLists.txt
 │   └─ ...
 ├─ tests/        # Unit tests using Google Test framework
 │   ├─ gtest_main.cpp
-│   ├─ test_collection1.cpp
-│   ├─ test_collection2.cpp
-│   └─ ...
+│   ├─ gtest_boost.cpp
+│   ├─ gtest_boost.h
+│   └─ CMakeLists.txt
 ├─ CMakeLists.txt
 ├─ README.md
 └─ ...
