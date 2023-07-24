@@ -1,14 +1,8 @@
 #include "gtest_boost.h"
 
-void BoostTest::SetUp()
-{
+void BoostTest::SetUp() {}
 
-}
-
-void BoostTest::TearDown()
-{
-
-}
+void BoostTest::TearDown() {}
 
 TEST_F(BoostTest, BoostVersion) 
 {
@@ -19,7 +13,7 @@ TEST_F(BoostTest, BoostVersion)
 
     EXPECT_TRUE(BOOST_VERSION >= 107500); 
 }
-
+/*
 TEST_F(BoostTest, BoostElapsedCPUTime)
 {
     std::cout << "Press Enter to stop the timer..." << std::endl;
@@ -31,6 +25,7 @@ TEST_F(BoostTest, BoostElapsedCPUTime)
     EXPECT_GT(elapsedSeconds, 0);
     std::cout << "Elapsed time: " << elapsedSeconds << " seconds" << std::endl;
 }
+*/
 
 TEST_F(BoostTest, BoostElapsedChronoTime)
 {

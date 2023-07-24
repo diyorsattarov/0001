@@ -6,6 +6,7 @@
 #include <cmath>
 #include <string>
 #include <conio.h>
+#include <memory> // Include the standard library's shared_ptr
 
 #include <gtest/gtest.h>
 
@@ -28,7 +29,7 @@ protected:
     void SetUp() override;
     void TearDown() override;
 
-    boost::shared_ptr<LogCaptureSink> sink_;
+    std::shared_ptr<LogCaptureSink> sink_; // Use std::shared_ptr
 };
 
 class LogCaptureSink : public boost::log::sinks::basic_sink_backend<
