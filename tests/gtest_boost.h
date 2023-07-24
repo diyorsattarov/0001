@@ -1,12 +1,10 @@
-#ifndef GTEST_BOOST_H
-#define GTEST_BOOST_H
+#ifndef GTEST_BOOST_TEST_H
+#define GTEST_BOOST_TEST_H
 
 #include <mutex>
 #include <sstream>
-#include <cmath>
 #include <string>
-#include <conio.h>
-#include <memory> // Include the standard library's shared_ptr
+#include <memory>
 
 #include <gtest/gtest.h>
 
