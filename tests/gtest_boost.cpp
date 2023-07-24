@@ -13,7 +13,28 @@ TEST_F(BoostTest, BoostVersion)
     EXPECT_TRUE(BOOST_VERSION >= 107500); // For example, check if the Boost version is at least 1.75.0
 }
 
-TEST_F(BoostTest, BoostElapsedTime)
+TEST_F(BoostTest, BoostElapsedCPUTime)
+{
+    std::cout << "Press Enter to stop the timer..." << std::endl;
+
+    boost::timer::cpu_timer timer;
+
+    // Wait for user input (Press Enter)
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    // Stop the timer
+    timer.stop();
+
+    // Get the elapsed CPU time
+    boost::timer::cpu_times elapsedTimes = timer.elapsed();
+
+    // Calculate the elapsed time in seconds
+    double elapsedSeconds = static_cast<double>(elapsedTimes.system + elapsedTimes.user) / 1e9;
+    EXPECT_GT(elapsedSeconds, 0);
+    std::cout << "Elapsed time: " << elapsedSeconds << " seconds" << std::endl;
+}
+
+TEST_F(BoostTest, BoostElapsedChronoTime)
 {
     std::cout << "Press Enter to stop the timer..." << std::endl;
 

@@ -4,6 +4,8 @@
 #include <gtest/gtest.h>
 #include <boost/version.hpp>
 #include <boost/chrono.hpp>
+#include <boost/timer/timer.hpp>
+#include <cmath>
 #include <string>
 #include <conio.h>
 

@@ -6,7 +6,7 @@ project(collectione_tests)
 #include_directories(${CURL_INCLUDE_DIR})
 
 # Find the Boost package (Recommended)
-find_package(Boost REQUIRED COMPONENTS chrono)
+find_package(Boost REQUIRED COMPONENTS chrono timer)
 include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(gtest_boost STATIC
