@@ -20,10 +20,8 @@
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
 
-// Forward declaration of LogCaptureSink
 class LogCaptureSink;
 
-// Test fixture for BoostLog
 class BoostTest : public ::testing::Test 
 {
 protected:
@@ -57,4 +55,4 @@ private:
     mutable std::mutex mutex_;
     std::ostringstream log_messages_;
 };
-#endif // GTEST_BOOST_H
+#endif 
