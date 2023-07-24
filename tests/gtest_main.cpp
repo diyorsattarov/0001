@@ -1,4 +1,4 @@
-#include "gtest_curl.cpp"
+#include "gtest_boost.cpp"
 
 int main(int argc, char** argv) 
 {
