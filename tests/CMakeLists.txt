@@ -32,7 +32,7 @@ set_target_properties(tests PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_D
 target_link_libraries(tests PRIVATE gtest_main)
 target_link_libraries(tests PRIVATE gtest)
 target_link_libraries(tests PRIVATE ${Boost_LIBRARIES})
-target_link_libraries(tests PRIVATE Boost::log_setup)  # Link Boost Log Setup library
+target_link_libraries(tests PRIVATE Boost::log_setup)
 
 
 add_test(NAME TestSuite COMMAND tests)
