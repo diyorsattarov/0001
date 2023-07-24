@@ -82,33 +82,25 @@ cd bin
 ```
 
 ```sample tests output
-[==========] Running 4 tests from 1 test suite.
+λ .\bin\tests.exe
+[==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 4 tests from BoostTest
+[----------] 3 tests from BoostTest
 [ RUN      ] BoostTest.BoostVersion
 Boost version: 1.82.0
 [       OK ] BoostTest.BoostVersion (0 ms)
-[ RUN      ] BoostTest.BoostElapsedCPUTime
-Press Enter to stop the timer...
-
-C:/msys64/home/root/collectione/tests/gtest_boost.cpp:43: Failure
-Expected: (elapsedSeconds) > (0), actual: 0 vs 0
-
-Elapsed time: 0 seconds
-[  FAILED  ] BoostTest.BoostElapsedCPUTime (3538 ms)
 [ RUN      ] BoostTest.BoostElapsedChronoTime
 Press Enter to stop the timer...
 
-Elapsed time: 3.68208
-[       OK ] BoostTest.BoostElapsedChronoTime (3683 ms)
+Elapsed time: 5.15438
+[       OK ] BoostTest.BoostElapsedChronoTime (5156 ms)
 [ RUN      ] BoostTest.BoostLogTrivial
-[2023-07-23 22:27:06.230615] [0x00003228] [trace]   A trace severity message
-[2023-07-23 22:27:06.244860] [0x00003228] [debug]   A debug severity message
-[2023-07-23 22:27:06.258689] [0x00003228] [info]    An informational severity message
-[2023-07-23 22:27:06.274936] [0x00003228] [warning] A warning severity message
-[2023-07-23 22:27:06.288952] [0x00003228] [error]   An error severity message
-[2023-07-23 22:27:06.302081] [0x00003228] [fatal]   A fatal severity message
-Assertion failed: px != 0, file C:/msys64/mingw64/include/boost/smart_ptr/shared_ptr.hpp, line 784
+[2023-07-23 23:48:43.115067] [0x00005424] [trace]   A trace severity message
+[2023-07-23 23:48:43.129470] [0x00005424] [debug]   A debug severity message
+[2023-07-23 23:48:43.143757] [0x00005424] [info]    An informational severity message
+[2023-07-23 23:48:43.159729] [0x00005424] [warning] A warning severity message
+[2023-07-23 23:48:43.174092] [0x00005424] [error]   An error severity message
+[2023-07-23 23:48:43.188481] [0x00005424] [fatal]   A fatal severity message
 ```
 
 ## Contributing
