@@ -83,24 +83,32 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 3 tests from 1 test suite.
+[==========] Running 7 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 3 tests from BoostTest
-[ RUN      ] BoostTest.BoostVersion
-Boost version: 1.82.0
-[       OK ] BoostTest.BoostVersion (0 ms)
-[ RUN      ] BoostTest.BoostElapsedChronoTime
-Press Enter to stop the timer...
+[----------] 7 tests from LinkedListTest
+[ RUN      ] LinkedListTest.InsertTest
+[       OK ] LinkedListTest.InsertTest (0 ms)
+[ RUN      ] LinkedListTest.DisplayTest
+[       OK ] LinkedListTest.DisplayTest (2 ms)
+[ RUN      ] LinkedListTest.MemoryManagementTest
+[       OK ] LinkedListTest.MemoryManagementTest (0 ms)
+[ RUN      ] LinkedListTest.DefaultConstruction
+[       OK ] LinkedListTest.DefaultConstruction (0 ms)
+[ RUN      ] LinkedListTest.InsertAndRemoveTest
+6 12 24 42
+12 24 42
+24 42
+42
+[       OK ] LinkedListTest.InsertAndRemoveTest (3 ms)
+[ RUN      ] LinkedListTest.InsertAndRemoveFromEmptyList
+[       OK ] LinkedListTest.InsertAndRemoveFromEmptyList (0 ms)
+[ RUN      ] LinkedListTest.LargeListTest
+[       OK ] LinkedListTest.LargeListTest (14 ms)
+[----------] 7 tests from LinkedListTest (54 ms total)
 
-Elapsed time: 5.15438
-[       OK ] BoostTest.BoostElapsedChronoTime (5156 ms)
-[ RUN      ] BoostTest.BoostLogTrivial
-[2023-07-23 23:48:43.115067] [0x00005424] [trace]   A trace severity message
-[2023-07-23 23:48:43.129470] [0x00005424] [debug]   A debug severity message
-[2023-07-23 23:48:43.143757] [0x00005424] [info]    An informational severity message
-[2023-07-23 23:48:43.159729] [0x00005424] [warning] A warning severity message
-[2023-07-23 23:48:43.174092] [0x00005424] [error]   An error severity message
-[2023-07-23 23:48:43.188481] [0x00005424] [fatal]   A fatal severity message
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (87 ms total)
+[  PASSED  ] 7 tests.
 ```
 
 ## Contributing
