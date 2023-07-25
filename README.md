@@ -3,7 +3,9 @@
 Collectione is a C++ project that provides various collection classes and utilities. It aims to make working with C++ easier and more efficient.
 
 ## TODO
-    Boost.Log
+    - LinkedListTest comprehensive test suite 
+    - Queue/Stack/Heap test suite
+    - Boost.Log
 
 ## Table of Contents
 

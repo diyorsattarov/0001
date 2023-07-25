@@ -274,7 +274,7 @@ TEST_F(LinkedListTest, SortEmptyListTest) {
 
 
 TEST_F(LinkedListTest, PerformanceTest) {
-    const int numElements = 10000; // You can adjust the number of elements as per your requirement
+    const int numElements = 40000; // You can adjust the number of elements as per your requirement
 
     LinkedList list;
     for (int i = numElements - 1; i >= 0; --i) {
@@ -290,7 +290,7 @@ TEST_F(LinkedListTest, PerformanceTest) {
     // You can set an appropriate threshold based on your performance requirements.
     double maxAllowedTimeInSeconds = 5.0;
     EXPECT_LT(duration.count(), maxAllowedTimeInSeconds);
-
+    
     std::vector<int> sortedElements = list.getSortedElements();
     for (size_t i = 1; i < sortedElements.size(); ++i) {
         // Use EXPECT_LE to check if the current element is less than or equal to the previous element
