@@ -84,9 +84,9 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 7 tests from 1 test suite.
+[==========] Running 14 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 7 tests from LinkedListTest
+[----------] 14 tests from LinkedListTest
 [ RUN      ] LinkedListTest.InsertTest
 [       OK ] LinkedListTest.InsertTest (0 ms)
 [ RUN      ] LinkedListTest.DisplayTest
@@ -96,20 +96,30 @@ cd bin
 [ RUN      ] LinkedListTest.DefaultConstruction
 [       OK ] LinkedListTest.DefaultConstruction (0 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveTest
-6 12 24 42
-12 24 42
-24 42
-42
-[       OK ] LinkedListTest.InsertAndRemoveTest (3 ms)
+[       OK ] LinkedListTest.InsertAndRemoveTest (0 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveFromEmptyList
 [       OK ] LinkedListTest.InsertAndRemoveFromEmptyList (0 ms)
 [ RUN      ] LinkedListTest.LargeListTest
-[       OK ] LinkedListTest.LargeListTest (14 ms)
-[----------] 7 tests from LinkedListTest (54 ms total)
+[       OK ] LinkedListTest.LargeListTest (15 ms)
+[ RUN      ] LinkedListTest.RemoveLastElementTest
+[       OK ] LinkedListTest.RemoveLastElementTest (0 ms)
+[ RUN      ] LinkedListTest.SizeTest
+[       OK ] LinkedListTest.SizeTest (0 ms)
+[ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
+[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
+[ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
+[       OK ] LinkedListTest.InsertAndRemoveRandomTest (10 ms)
+[ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
+[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (10 ms)
+[ RUN      ] LinkedListTest.EmptySizeTest
+[       OK ] LinkedListTest.EmptySizeTest (0 ms)
+[ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
+[       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
+[----------] 14 tests from LinkedListTest (89 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (87 ms total)
-[  PASSED  ] 7 tests.
+[==========] 14 tests from 1 test suite ran. (122 ms total)
+[  PASSED  ] 14 tests.
 ```
 
 ## Contributing
