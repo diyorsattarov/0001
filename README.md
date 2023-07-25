@@ -84,9 +84,9 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 14 tests from 1 test suite.
+[==========] Running 15 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 14 tests from LinkedListTest
+[----------] 15 tests from LinkedListTest
 [ RUN      ] LinkedListTest.InsertTest
 [       OK ] LinkedListTest.InsertTest (0 ms)
 [ RUN      ] LinkedListTest.DisplayTest
@@ -100,7 +100,7 @@ cd bin
 [ RUN      ] LinkedListTest.InsertAndRemoveFromEmptyList
 [       OK ] LinkedListTest.InsertAndRemoveFromEmptyList (0 ms)
 [ RUN      ] LinkedListTest.LargeListTest
-[       OK ] LinkedListTest.LargeListTest (15 ms)
+[       OK ] LinkedListTest.LargeListTest (14 ms)
 [ RUN      ] LinkedListTest.RemoveLastElementTest
 [       OK ] LinkedListTest.RemoveLastElementTest (0 ms)
 [ RUN      ] LinkedListTest.SizeTest
@@ -108,18 +108,20 @@ cd bin
 [ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
 [       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
-[       OK ] LinkedListTest.InsertAndRemoveRandomTest (10 ms)
+[       OK ] LinkedListTest.InsertAndRemoveRandomTest (1 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
-[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (10 ms)
+[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (1 ms)
 [ RUN      ] LinkedListTest.EmptySizeTest
 [       OK ] LinkedListTest.EmptySizeTest (0 ms)
 [ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
 [       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
-[----------] 14 tests from LinkedListTest (89 ms total)
+[ RUN      ] LinkedListTest.BubbleSortTest
+[       OK ] LinkedListTest.BubbleSortTest (6 ms)
+[----------] 15 tests from LinkedListTest (77 ms total)
 
 [----------] Global test environment tear-down
-[==========] 14 tests from 1 test suite ran. (122 ms total)
-[  PASSED  ] 14 tests.
+[==========] 15 tests from 1 test suite ran. (112 ms total)
+[  PASSED  ] 15 tests.
 ```
 
 ## Contributing

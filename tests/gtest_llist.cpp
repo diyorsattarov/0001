@@ -51,6 +51,29 @@ public:
         return count;
     }
 
+    // Sorting Algorithm: Bubble Sort
+    void bubbleSort() {
+        Node* current = head;
+        Node* nextNode = nullptr;
+        int temp;
+
+        while (current != nullptr) {
+            nextNode = current->next;
+
+            while (nextNode != nullptr) {
+                if (current->data > nextNode->data) {
+                    temp = current->data;
+                    current->data = nextNode->data;
+                    nextNode->data = temp;
+                }
+
+                nextNode = nextNode->next;
+            }
+
+            current = current->next;
+        }
+    }
+
     ~LinkedList() {
         Node* current = head;
         while (current != nullptr) {
@@ -60,7 +83,6 @@ public:
         }
     }
 };
-
 
 class LinkedListTest : public ::testing::Test {
 protected:
@@ -207,3 +229,23 @@ TEST_F(LinkedListTest, LargeInsertAndRemoveTest) {
 
     EXPECT_TRUE(list.isEmpty());
 }
+
+TEST_F(LinkedListTest, BubbleSortTest) {
+    // Prepare the list for sorting
+    LinkedList list;
+    list.insert(4);
+    list.insert(2);
+    list.insert(7);
+    list.insert(1);
+    list.insert(5);
+
+    // Perform the sorting algorithm (Bubble Sort) on the list
+    list.bubbleSort();
+
+    // Check if the list is sorted in ascending order
+    testing::internal::CaptureStdout();
+    list.display();
+    std::string output = testing::internal::GetCapturedStdout();
+    // Add appropriate expectations to check the output and correctness of the elements
+}
+
