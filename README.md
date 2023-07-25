@@ -84,7 +84,6 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-λ .\bin\tests.exe
 [==========] Running 16 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 16 tests from LinkedListTest
@@ -95,7 +94,7 @@ cd bin
 [ RUN      ] LinkedListTest.DefaultConstruction
 [       OK ] LinkedListTest.DefaultConstruction (0 ms)
 [ RUN      ] LinkedListTest.LargeListTest
-[       OK ] LinkedListTest.LargeListTest (16 ms)
+[       OK ] LinkedListTest.LargeListTest (14 ms)
 [ RUN      ] LinkedListTest.RemoveLastElementTest
 [       OK ] LinkedListTest.RemoveLastElementTest (0 ms)
 [ RUN      ] LinkedListTest.SizeTest
@@ -103,15 +102,15 @@ cd bin
 [ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
 [       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
-[       OK ] LinkedListTest.InsertAndRemoveRandomTest (3 ms)
+[       OK ] LinkedListTest.InsertAndRemoveRandomTest (1 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
-[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (1 ms)
+[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (2 ms)
 [ RUN      ] LinkedListTest.EmptySizeTest
 [       OK ] LinkedListTest.EmptySizeTest (0 ms)
 [ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
 [       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
 [ RUN      ] LinkedListTest.BubbleSortTest
-[       OK ] LinkedListTest.BubbleSortTest (2 ms)
+[       OK ] LinkedListTest.BubbleSortTest (1 ms)
 [ RUN      ] LinkedListTest.SortAlreadySortedTest
 [       OK ] LinkedListTest.SortAlreadySortedTest (2 ms)
 [ RUN      ] LinkedListTest.SortWithDuplicateValuesTest
@@ -119,19 +118,12 @@ cd bin
 [ RUN      ] LinkedListTest.SortEmptyListTest
 [       OK ] LinkedListTest.SortEmptyListTest (0 ms)
 [ RUN      ] LinkedListTest.PerformanceTest
-C:/msys64/home/root/collectione/tests/gtest_llist.cpp:307: Failure
-Expected: (duration.count()) < (maxAllowedTimeInSeconds), actual: 20.188123300000001 vs 5
-
-[  FAILED  ] LinkedListTest.PerformanceTest (20203 ms)
-[----------] 16 tests from LinkedListTest (20289 ms total)
+[       OK ] LinkedListTest.PerformanceTest (176 ms)
+[----------] 16 tests from LinkedListTest (253 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 1 test suite ran. (20319 ms total)
-[  PASSED  ] 15 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] LinkedListTest.PerformanceTest
-
- 1 FAILED TEST
+[==========] 16 tests from 1 test suite ran. (282 ms total)
+[  PASSED  ] 16 tests.
 ```
 
 ## Contributing
