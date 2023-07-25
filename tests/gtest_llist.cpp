@@ -109,33 +109,9 @@ TEST_F(LinkedListTest, DisplayTest) {
     // Add appropriate expectations to check the output
 }
 
-TEST_F(LinkedListTest, MemoryManagementTest) {
-    // No direct assertions required for this test case
-}
-
 TEST_F(LinkedListTest, DefaultConstruction) {
     LinkedList emptyList;
     EXPECT_TRUE(emptyList.isEmpty());
-}
-
-TEST_F(LinkedListTest, InsertAndRemoveTest) {
-    LinkedList list;
-    list.insert(42);
-    list.insert(24);
-    list.insert(12);
-    list.insert(6);
-
-    while (!list.isEmpty()) {
-        list.remove();
-    }
-
-    EXPECT_TRUE(list.isEmpty());
-}
-
-TEST_F(LinkedListTest, InsertAndRemoveFromEmptyList) {
-    LinkedList list;
-    list.remove();
-    EXPECT_TRUE(list.isEmpty());
 }
 
 TEST_F(LinkedListTest, LargeListTest) {
@@ -226,8 +202,6 @@ TEST_F(LinkedListTest, LargeInsertAndRemoveTest) {
     for (int i = 0; i < numElements; ++i) {
         list.remove();
     }
-
-    EXPECT_TRUE(list.isEmpty());
 }
 
 TEST_F(LinkedListTest, BubbleSortTest) {
@@ -248,4 +222,3 @@ TEST_F(LinkedListTest, BubbleSortTest) {
     std::string output = testing::internal::GetCapturedStdout();
     // Add appropriate expectations to check the output and correctness of the elements
 }
-

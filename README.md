@@ -84,21 +84,15 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 15 tests from 1 test suite.
+[==========] Running 12 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 15 tests from LinkedListTest
+[----------] 12 tests from LinkedListTest
 [ RUN      ] LinkedListTest.InsertTest
 [       OK ] LinkedListTest.InsertTest (0 ms)
 [ RUN      ] LinkedListTest.DisplayTest
 [       OK ] LinkedListTest.DisplayTest (2 ms)
-[ RUN      ] LinkedListTest.MemoryManagementTest
-[       OK ] LinkedListTest.MemoryManagementTest (0 ms)
 [ RUN      ] LinkedListTest.DefaultConstruction
 [       OK ] LinkedListTest.DefaultConstruction (0 ms)
-[ RUN      ] LinkedListTest.InsertAndRemoveTest
-[       OK ] LinkedListTest.InsertAndRemoveTest (0 ms)
-[ RUN      ] LinkedListTest.InsertAndRemoveFromEmptyList
-[       OK ] LinkedListTest.InsertAndRemoveFromEmptyList (0 ms)
 [ RUN      ] LinkedListTest.LargeListTest
 [       OK ] LinkedListTest.LargeListTest (14 ms)
 [ RUN      ] LinkedListTest.RemoveLastElementTest
@@ -106,9 +100,9 @@ cd bin
 [ RUN      ] LinkedListTest.SizeTest
 [       OK ] LinkedListTest.SizeTest (0 ms)
 [ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
-[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
+[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (9 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
-[       OK ] LinkedListTest.InsertAndRemoveRandomTest (1 ms)
+[       OK ] LinkedListTest.InsertAndRemoveRandomTest (2 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
 [       OK ] LinkedListTest.InsertAndRemoveSameValueTest (1 ms)
 [ RUN      ] LinkedListTest.EmptySizeTest
@@ -116,12 +110,12 @@ cd bin
 [ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
 [       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
 [ RUN      ] LinkedListTest.BubbleSortTest
-[       OK ] LinkedListTest.BubbleSortTest (6 ms)
-[----------] 15 tests from LinkedListTest (77 ms total)
+[       OK ] LinkedListTest.BubbleSortTest (1 ms)
+[----------] 12 tests from LinkedListTest (75 ms total)
 
 [----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (112 ms total)
-[  PASSED  ] 15 tests.
+[==========] 12 tests from 1 test suite ran. (109 ms total)
+[  PASSED  ] 12 tests.
 ```
 
 ## Contributing
