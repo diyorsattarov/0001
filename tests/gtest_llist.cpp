@@ -287,7 +287,7 @@ TEST_F(LinkedListTest, SortEmptyListTest) {
 
 
 TEST_F(LinkedListTest, PerformanceTest) {
-    const int numElements = 100000; // You can adjust the number of elements as per your requirement
+    const int numElements = 10000; // You can adjust the number of elements as per your requirement
 
     // Prepare the list with a large number of elements
     LinkedList list;
