@@ -51,9 +51,10 @@ collectione/
 │   ├─ CMakeLists.txt
 │   └─ ...
 ├─ tests/        # Unit tests using Google Test framework
-│   ├─ gtest_main.cpp
-│   ├─ gtest_boost.cpp
-│   ├─ gtest_boost.h
+│   ├─ gtest_main.cpp *
+    ├─ gtest_llist.cpp *
+│   ├─ gtest_boost.cpp 
+│   ├─ gtest_boost.h 
 │   └─ CMakeLists.txt
 ├─ CMakeLists.txt
 ├─ README.md
