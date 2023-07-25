@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <iostream>
+#include <chrono>
 
 struct Node {
     int data;
@@ -72,6 +73,16 @@ public:
 
             current = current->next;
         }
+    }
+
+    std::vector<int> getSortedElements() {
+        std::vector<int> elements;
+        Node* current = head;
+        while (current != nullptr) {
+            elements.push_back(current->data);
+            current = current->next;
+        }
+        return elements;
     }
 
     ~LinkedList() {
@@ -221,4 +232,84 @@ TEST_F(LinkedListTest, BubbleSortTest) {
     list.display();
     std::string output = testing::internal::GetCapturedStdout();
     // Add appropriate expectations to check the output and correctness of the elements
+}
+
+TEST_F(LinkedListTest, SortAlreadySortedTest) {
+    // Prepare the list with elements in ascending order
+    LinkedList list;
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+
+    // Perform the sorting algorithm (Bubble Sort) on the list
+    list.bubbleSort();
+
+    // Check if the list is sorted in ascending order
+    testing::internal::CaptureStdout();
+    list.display();
+    std::string output = testing::internal::GetCapturedStdout();
+    // Add appropriate expectations to check the output and correctness of the elements
+    EXPECT_EQ(output, "1 2 3 4 5 \n"); // The output should be the same as the original order
+}
+
+TEST_F(LinkedListTest, SortWithDuplicateValuesTest) {
+    // Prepare the list with duplicate values
+    LinkedList list;
+    list.insert(3);
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(2);
+
+    // Perform the sorting algorithm (Bubble Sort) on the list
+    list.bubbleSort();
+
+    // Check if the list is sorted in ascending order with duplicates handled appropriately
+    testing::internal::CaptureStdout();
+    list.display();
+    std::string output = testing::internal::GetCapturedStdout();
+    // Add appropriate expectations to check the output and correctness of the elements
+    EXPECT_EQ(output, "1 2 2 3 3 \n"); // The output should be sorted with duplicate values maintained
+}
+
+TEST_F(LinkedListTest, SortEmptyListTest) {
+    // Prepare an empty list
+    LinkedList list;
+
+    // Perform the sorting algorithm (Bubble Sort) on the empty list
+    list.bubbleSort();
+
+    // Check if the list remains empty after sorting
+    EXPECT_TRUE(list.isEmpty());
+}
+
+
+TEST_F(LinkedListTest, PerformanceTest) {
+    const int numElements = 100000; // You can adjust the number of elements as per your requirement
+
+    // Prepare the list with a large number of elements
+    LinkedList list;
+    for (int i = numElements - 1; i >= 0; --i) {
+        list.insert(i);
+    }
+
+    // Measure the time taken for sorting using bubbleSort()
+    auto start = std::chrono::high_resolution_clock::now();
+    list.bubbleSort();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+
+    // Check if the sorting meets your performance requirements (e.g., not taking too long)
+    // You can set an appropriate threshold based on your performance requirements.
+    double maxAllowedTimeInSeconds = 5.0;
+    EXPECT_LT(duration.count(), maxAllowedTimeInSeconds);
+
+    // Verify if the list is sorted in ascending order using the helper function
+    std::vector<int> sortedElements = list.getSortedElements();
+    for (size_t i = 1; i < sortedElements.size(); ++i) {
+        // Use EXPECT_LE to check if the current element is less than or equal to the previous element
+        EXPECT_LE(sortedElements[i - 1], sortedElements[i]);
+    }
 }

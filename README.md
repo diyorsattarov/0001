@@ -84,9 +84,10 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 12 tests from 1 test suite.
+λ .\bin\tests.exe
+[==========] Running 16 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 12 tests from LinkedListTest
+[----------] 16 tests from LinkedListTest
 [ RUN      ] LinkedListTest.InsertTest
 [       OK ] LinkedListTest.InsertTest (0 ms)
 [ RUN      ] LinkedListTest.DisplayTest
@@ -94,15 +95,15 @@ cd bin
 [ RUN      ] LinkedListTest.DefaultConstruction
 [       OK ] LinkedListTest.DefaultConstruction (0 ms)
 [ RUN      ] LinkedListTest.LargeListTest
-[       OK ] LinkedListTest.LargeListTest (14 ms)
+[       OK ] LinkedListTest.LargeListTest (16 ms)
 [ RUN      ] LinkedListTest.RemoveLastElementTest
 [       OK ] LinkedListTest.RemoveLastElementTest (0 ms)
 [ RUN      ] LinkedListTest.SizeTest
 [       OK ] LinkedListTest.SizeTest (0 ms)
 [ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
-[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (9 ms)
+[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
-[       OK ] LinkedListTest.InsertAndRemoveRandomTest (2 ms)
+[       OK ] LinkedListTest.InsertAndRemoveRandomTest (3 ms)
 [ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
 [       OK ] LinkedListTest.InsertAndRemoveSameValueTest (1 ms)
 [ RUN      ] LinkedListTest.EmptySizeTest
@@ -110,12 +111,27 @@ cd bin
 [ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
 [       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
 [ RUN      ] LinkedListTest.BubbleSortTest
-[       OK ] LinkedListTest.BubbleSortTest (1 ms)
-[----------] 12 tests from LinkedListTest (75 ms total)
+[       OK ] LinkedListTest.BubbleSortTest (2 ms)
+[ RUN      ] LinkedListTest.SortAlreadySortedTest
+[       OK ] LinkedListTest.SortAlreadySortedTest (2 ms)
+[ RUN      ] LinkedListTest.SortWithDuplicateValuesTest
+[       OK ] LinkedListTest.SortWithDuplicateValuesTest (1 ms)
+[ RUN      ] LinkedListTest.SortEmptyListTest
+[       OK ] LinkedListTest.SortEmptyListTest (0 ms)
+[ RUN      ] LinkedListTest.PerformanceTest
+C:/msys64/home/root/collectione/tests/gtest_llist.cpp:307: Failure
+Expected: (duration.count()) < (maxAllowedTimeInSeconds), actual: 20.188123300000001 vs 5
+
+[  FAILED  ] LinkedListTest.PerformanceTest (20203 ms)
+[----------] 16 tests from LinkedListTest (20289 ms total)
 
 [----------] Global test environment tear-down
-[==========] 12 tests from 1 test suite ran. (109 ms total)
-[  PASSED  ] 12 tests.
+[==========] 16 tests from 1 test suite ran. (20319 ms total)
+[  PASSED  ] 15 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] LinkedListTest.PerformanceTest
+
+ 1 FAILED TEST
 ```
 
 ## Contributing
