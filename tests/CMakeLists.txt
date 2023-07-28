@@ -1,11 +1,17 @@
 cmake_minimum_required(VERSION 3.26)
 project(collectione_tests)
 
-add_library(gtest_llist STATIC
-    gmock_llist.cpp
+set(MOCK_SOURCES STATIC
+    gmock_foo.cpp
+    gmock_performance.cpp
 )
 
-set_target_properties(gtest_llist PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Add the gtest library
+add_library(gmock_sources STATIC
+    ${MOCK_SOURCES}
+)
+
+set_target_properties(gmock_sources PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 add_executable(tests 
     gtest_main.cpp

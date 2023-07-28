@@ -1,40 +1,57 @@
-#include <vector>
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
-struct Node {
-    int data;
-    Node* next;
-};
+#include <vector>
+#include <iostream>
+#include <chrono>
+#include "node.h"
 
 class LinkedList {
 private:
     Node* head;
-    int count; // Add a member to keep track of the number of elements
+    int count; 
 
 public:
     LinkedList() : head(nullptr), count(0) {}
 
-    void insert(int data) {
+    virtual Node* getHead() const 
+    {
+        return head;
+    }
+
+    virtual int getSize() const 
+    {
+        return count;
+    }
+
+    virtual void insert(int data) 
+    {
         Node* newNode = new Node;
         newNode->data = data;
         newNode->next = head;
         head = newNode;
-        count++; // Increment the count after insertion
+        count++; 
     }
 
-    void display() {
+    virtual std::string stringList() const
+    {
+        std::ostringstream oss;
         Node* current = head;
-        while (current != nullptr) {
-            std::cout << current->data << " ";
+        while (current != nullptr) 
+        {
+            oss << current->data << " ";
             current = current->next;
         }
-        std::cout << std::endl;
+        return oss.str();
     }
 
-    bool isEmpty() const {
+    virtual bool isEmpty() const 
+    {
         return head == nullptr;
     }
-
-    void remove() {
+    
+    virtual void remove() 
+    {
         if (head == nullptr) {
             return;
         }
@@ -44,51 +61,32 @@ public:
         delete toRemove;
         count--; // Decrement the count after removal
     }
+    //virtual void bubbleSort() {}
+    //virtual std::vector<int> getSortedElements() {}
 
-    // Add the size() member function
-    int size() const {
-        return count;
-    }
-
-    // Sorting Algorithm: Bubble Sort
-    void bubbleSort() {
+    virtual void clear() 
+    {
         Node* current = head;
-        Node* nextNode = nullptr;
-        int temp;
-
-        while (current != nullptr) {
-            nextNode = current->next;
-
-            while (nextNode != nullptr) {
-                if (current->data > nextNode->data) {
-                    temp = current->data;
-                    current->data = nextNode->data;
-                    nextNode->data = temp;
-                }
-
-                nextNode = nextNode->next;
-            }
-
+        while (current != nullptr) 
+        {
+            Node* temp = current;
             current = current->next;
+            delete temp;
         }
+        head = nullptr;
+        count = 0;
     }
-
-    std::vector<int> getSortedElements() {
-        std::vector<int> elements;
+    
+    ~LinkedList() 
+    {
         Node* current = head;
-        while (current != nullptr) {
-            elements.push_back(current->data);
-            current = current->next;
-        }
-        return elements;
-    }
-
-    ~LinkedList() {
-        Node* current = head;
-        while (current != nullptr) {
+        while (current != nullptr) 
+        {
             Node* temp = current;
             current = current->next;
             delete temp;
         }
     }
 };
+
+#endif // LINKED_LIST_H

@@ -1,4 +1,6 @@
-#include "gtest_llist.cpp"
+#include <gtest/gtest.h>
+#include "gmock_foo.cpp"
+#include "gmock_performance.cpp"
 
 int main(int argc, char** argv) 
 {
