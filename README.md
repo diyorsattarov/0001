@@ -54,9 +54,12 @@ collectione/
 │   └─ ...
 ├─ tests/        # Unit tests using Google Test framework
 │   ├─ gtest_main.cpp *
-    ├─ gtest_llist.cpp *
-│   ├─ gtest_boost.cpp 
-│   ├─ gtest_boost.h 
+|   ├─ gmock_performance.cpp
+|   ├─ gmock_foo.cpp
+│   ├─ gmock_linkedlist.cpp 
+│   ├─ gmock_node.cpp
+|   ├─ linkedlist.h
+|   ├─ node.h
 │   └─ CMakeLists.txt
 ├─ CMakeLists.txt
 ├─ README.md
@@ -86,46 +89,63 @@ cd bin
 
 ```sample tests output
 λ .\bin\tests.exe
-[==========] Running 16 tests from 1 test suite.
+[==========] Running 19 tests from 4 test suites.
 [----------] Global test environment set-up.
-[----------] 16 tests from LinkedListTest
-[ RUN      ] LinkedListTest.InsertTest
-[       OK ] LinkedListTest.InsertTest (0 ms)
-[ RUN      ] LinkedListTest.DisplayTest
-[       OK ] LinkedListTest.DisplayTest (2 ms)
-[ RUN      ] LinkedListTest.DefaultConstruction
-[       OK ] LinkedListTest.DefaultConstruction (0 ms)
-[ RUN      ] LinkedListTest.LargeListTest
-[       OK ] LinkedListTest.LargeListTest (14 ms)
-[ RUN      ] LinkedListTest.RemoveLastElementTest
-[       OK ] LinkedListTest.RemoveLastElementTest (0 ms)
-[ RUN      ] LinkedListTest.SizeTest
-[       OK ] LinkedListTest.SizeTest (0 ms)
-[ RUN      ] LinkedListTest.InsertAndDisplayNegativeNumbers
-[       OK ] LinkedListTest.InsertAndDisplayNegativeNumbers (2 ms)
-[ RUN      ] LinkedListTest.InsertAndRemoveRandomTest
-[       OK ] LinkedListTest.InsertAndRemoveRandomTest (1 ms)
-[ RUN      ] LinkedListTest.InsertAndRemoveSameValueTest
-[       OK ] LinkedListTest.InsertAndRemoveSameValueTest (2 ms)
-[ RUN      ] LinkedListTest.EmptySizeTest
-[       OK ] LinkedListTest.EmptySizeTest (0 ms)
-[ RUN      ] LinkedListTest.LargeInsertAndRemoveTest
-[       OK ] LinkedListTest.LargeInsertAndRemoveTest (0 ms)
-[ RUN      ] LinkedListTest.BubbleSortTest
-[       OK ] LinkedListTest.BubbleSortTest (1 ms)
-[ RUN      ] LinkedListTest.SortAlreadySortedTest
-[       OK ] LinkedListTest.SortAlreadySortedTest (2 ms)
-[ RUN      ] LinkedListTest.SortWithDuplicateValuesTest
-[       OK ] LinkedListTest.SortWithDuplicateValuesTest (1 ms)
-[ RUN      ] LinkedListTest.SortEmptyListTest
-[       OK ] LinkedListTest.SortEmptyListTest (0 ms)
-[ RUN      ] LinkedListTest.PerformanceTest
-[       OK ] LinkedListTest.PerformanceTest (176 ms)
-[----------] 16 tests from LinkedListTest (253 ms total)
+[----------] 8 tests from FooTest
+[ RUN      ] FooTest.GetFooIdTest
+[       OK ] FooTest.GetFooIdTest (0 ms)
+[ RUN      ] FooTest.GetFooNameTest
+[       OK ] FooTest.GetFooNameTest (0 ms)
+[ RUN      ] FooTest.GetFooValueTest
+[       OK ] FooTest.GetFooValueTest (0 ms)
+[ RUN      ] FooTest.SetFooIdTest
+[       OK ] FooTest.SetFooIdTest (0 ms)
+[ RUN      ] FooTest.SetInvalidFooIdTest
+[       OK ] FooTest.SetInvalidFooIdTest (0 ms)
+[ RUN      ] FooTest.SetFooNameTest
+[       OK ] FooTest.SetFooNameTest (0 ms)
+[ RUN      ] FooTest.SetFooValueTest
+[       OK ] FooTest.SetFooValueTest (0 ms)
+[ RUN      ] FooTest.PrintFooInfoTest
+[       OK ] FooTest.PrintFooInfoTest (0 ms)
+[----------] 8 tests from FooTest (125 ms total)
+
+[----------] 9 tests from BarTest
+[ RUN      ] BarTest.GetBarValueTest
+[       OK ] BarTest.GetBarValueTest (0 ms)
+[ RUN      ] BarTest.SetBarValueTest
+[       OK ] BarTest.SetBarValueTest (0 ms)
+[ RUN      ] BarTest.PrintBarInfoTest
+[       OK ] BarTest.PrintBarInfoTest (0 ms)
+[ RUN      ] BarTest.GetFooIdInheritedTest
+[       OK ] BarTest.GetFooIdInheritedTest (0 ms)
+[ RUN      ] BarTest.GetFooNameInheritedTest
+[       OK ] BarTest.GetFooNameInheritedTest (0 ms)
+[ RUN      ] BarTest.GetFooValueInheritedTest
+[       OK ] BarTest.GetFooValueInheritedTest (0 ms)
+[ RUN      ] BarTest.SetFooIdInheritedTest
+[       OK ] BarTest.SetFooIdInheritedTest (0 ms)
+[ RUN      ] BarTest.SetFooNameInheritedTest
+[       OK ] BarTest.SetFooNameInheritedTest (0 ms)
+[ RUN      ] BarTest.SetFooValueInheritedTest
+[       OK ] BarTest.SetFooValueInheritedTest (0 ms)
+[----------] 9 tests from BarTest (158 ms total)
+
+[----------] 1 test from FooPerformanceTest
+[ RUN      ] FooPerformanceTest.MeasureGetFooValueTime
+Average execution time for getFooValue(): 2 nanoseconds
+[       OK ] FooPerformanceTest.MeasureGetFooValueTime (3 ms)
+[----------] 1 test from FooPerformanceTest (27 ms total)
+
+[----------] 1 test from BarPerformanceTest
+[ RUN      ] BarPerformanceTest.MeasureGetBarValueTime
+Average execution time for getFooValue(): 2 nanoseconds
+[       OK ] BarPerformanceTest.MeasureGetBarValueTime (3 ms)
+[----------] 1 test from BarPerformanceTest (24 ms total)
 
 [----------] Global test environment tear-down
-[==========] 16 tests from 1 test suite ran. (282 ms total)
-[  PASSED  ] 16 tests.
+[==========] 19 tests from 4 test suites ran. (435 ms total)
+[  PASSED  ] 19 tests.
 ```
 
 ## Contributing
